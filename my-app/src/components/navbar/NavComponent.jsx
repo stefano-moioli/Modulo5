@@ -1,8 +1,12 @@
 import React from "react";
+import Button from 'react-bootstrap/Button'
 
 const NavComponent = () => {
     return (
-        <nav>prova</nav>
+        <nav>prova
+            <Button className="outline-primary">Primary</Button>
+        </nav>
+
     )
 }
 
