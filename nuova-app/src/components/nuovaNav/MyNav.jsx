@@ -1,10 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/esm/Container';
+import styles from "./navbar.css"
 
 function MyNav() {
   return (
     <>
-    <Container>
+    <Container id='navContainer' >
     <Nav
       activeKey="/home"
       onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
