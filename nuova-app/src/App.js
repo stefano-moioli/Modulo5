@@ -1,22 +1,12 @@
-import ButtonComponent from './components/Button/ButtonComponent';
+import ButtonComponent from './components/button/ButtonComponent';
 import React from 'react';
-import NavComponent from './components/navbar/NavComponent';
-import NuovaNav from './components/nuovaNav/NuovaNav';
-
-
+import MyNav from './components/nuovaNav/MyNav';
 
 
 function App() {
   return (
     <>
-    <NuovaNav />
-    <div>prova</div>
-    <button>premi qui</button>
-    <ButtonComponent />
-    <div>
-      ciao react
-    </div>
-    
+    <MyNav />
     </>
   );
 }
