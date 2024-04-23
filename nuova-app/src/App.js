@@ -10,12 +10,13 @@ import SearchBarComponent from './components/searchComponent/SearchBarComponent'
 function App() {
 
   const [books, setBooks] = useState(Fantasy) //nell'array nome stato
+  const [booksInit, setBooksInit] = useState(Fantasy)
 
   return (
     <>
     <MyNav />
     <WelcomeComponent />
-    <SearchBarComponent allBooks={books} setBooks={setBooks}/>
+    <SearchBarComponent allBooks={books} setBooks={setBooks} booksInit={booksInit}/>
     <AlltheBooks allBooks={books}/>
 
     <MyFooter />
