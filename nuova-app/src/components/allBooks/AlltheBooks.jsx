@@ -7,7 +7,7 @@ export default function AlltheBooks(props){
     return(
     <Container >
         <Row className="mt-4">
-            {Fantasy.map(book=>(
+            {props.allBooks.map(book=>( //props.allBooks la passo da App.js per far mappare anche i libri che cerco
                 <SingleBook 
                 img = {book.img}
                 title = {book.title}
