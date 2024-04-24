@@ -10,7 +10,7 @@ const [input, setInput] = useState(""); //input legge e setInput scrive
 const handleChangeInput = (e) =>{ //evento come parametro scaturisce dall'onChange
     // console.log(input); // funziona
   if(e.target.value === ""){
-   props.setBooks(props.booksInit)
+   props.setBooks(props.booksInit) //ho scritto uno stato iniziale che non viene modificato
     }
     setInput(e.target.value) //qui gli devo dire cosa scrivere nello stato, cioè cosa passare a input
 }
@@ -20,8 +20,6 @@ const filterBooks = () =>{
         book.title.toLowerCase().includes(input.toLowerCase()))
         props.setBooks(filterByTerm)
     }
-
-    
 
     return(
     <Container>
