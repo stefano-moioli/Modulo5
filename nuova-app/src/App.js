@@ -15,11 +15,10 @@ function App() {
 
   return (
     <>
-    <MyNav searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+    <MyNav searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
     <WelcomeComponent />
     <SearchBarComponent allBooks={books} setBooks={setBooks} booksInit={booksInit}/>
-    <AlltheBooks allBooks={books}/>
-
+    <AlltheBooks searchQuery={searchQuery}/>
     <MyFooter />
     </>
   );

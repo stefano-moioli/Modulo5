@@ -1,22 +1,21 @@
-import { Container, Row } from "react-bootstrap";
-import Fantasy from "../../dataBooks/fantasy.json"
-import SingleBook from "../singleBook/SingleBook";
-import styles from "../allBooks/allTheBooks.css"
+import { Col, Row } from 'react-bootstrap'
+import fantasy from "../../dataBooks/fantasy.json"
+import SingleBook from "../singleBook/SingleBook"
 
-export default function AlltheBooks(props){
-    return(
-    <Container >
-        <Row className="mt-4">
-            {props.allBooks.map(book=>(
-                <SingleBook 
-                img = {book.img}
-                title = {book.title}
-                category = {book.category}
-                key = {book.asin}
-                asin = {book.asin}
-                />
-            ))}
-        </Row>
-    </Container>
-    )
+const AllTheBooks = ({ searchQuery }) => {
+  return (
+    <Row className="g-2 mt-3">
+      {fantasy
+        .filter((b) => b.title.toLowerCase().includes(searchQuery))
+        .map((book) => {
+          return (
+            <Col xs={12} md={4} key={book.asin}>
+              <SingleBook book={book} />
+            </Col>
+          )
+        })}
+    </Row>
+  )
 }
+
+export default AllTheBooks

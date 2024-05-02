@@ -1,36 +1,24 @@
-import { Button, Card, Col } from "react-bootstrap";
-import CommentArea from "../commentComponent/CommentArea";
-import { useState } from "react";
+import { useState } from 'react'
+import { Card } from 'react-bootstrap'
+import CommentArea from "../commentComponent/CommentArea"
 
-function SingleBook(props) {
+const SingleBook = ({ book }) => {
+  const [selected, setSelected] = useState(false)
 
-   const [selected, setSelected] = useState(false)
-
-    const handleClickImage = () =>{
-      setSelected(!selected)
-    }
-
-    return (
-        <Col xs={12} md={4} lg={3} className="mb-4">
-            <Card >
-                <Card.Img variant="top" src={props.img} onClick={handleClickImage}
-                style={{cursor: "pointer", border: selected ? "2px solid red" : "none"}}/>
-                <Card.Body>
-                    <Card.Title>{props.title}</Card.Title>
-                    <Card.Text>
-                        {props.category}
-                    </Card.Text>
-                    <Card.Text>
-                        {props.price}
-                    </Card.Text>
-                    <Card.Text>
-                        {props.asin}
-                    </Card.Text>
-                    {selected && <CommentArea asin={props.asin} />}
-                </Card.Body>
-            </Card>
-        </Col>
-    )
+  return (
+    <>
+      <Card
+        onClick={() => setSelected(!selected)}
+        style={{ border: selected ? '3px solid red' : 'none' }}
+      >
+        <Card.Img variant="top" src={book.img} />
+        <Card.Body>
+          <Card.Title style={{ color: 'black' }}>{book.title}</Card.Title>
+        </Card.Body>
+      </Card>
+      {selected && <CommentArea asin={book.asin} />}
+    </>
+  )
 }
 
-export default SingleBook;
+export default SingleBook
