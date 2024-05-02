@@ -1,30 +1,42 @@
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/esm/Container';
-import styles from "./navbar.css"
+import { Navbar, Nav, Container, Form, Button, Row, Col } from 'react-bootstrap'
 
-function MyNav() {
+const MyNav = ({ searchQuery, setSearchQuery }) => {
+
   return (
-    <>
-    <Container id='navContainer' >
-    <Nav
-      activeKey="/home"
-      onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+    <Navbar
+      expand="lg"
+      className="bg-body-tertiary mb-3"
+      bg="dark"
+      data-bs-theme="dark"
     >
-      
-      <Nav.Item>
-        <Nav.Link href="#">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="#">About</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="#">Browse</Nav.Link>
-      </Nav.Item>
-    
-    </Nav>
-    </Container>
-    </>
-  );
+      <Container fluid>
+        <Navbar.Brand href="#">EpiBooks</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#">Home</Nav.Link>
+            <Nav.Link href="#">About</Nav.Link>
+            <Nav.Link href="#">Browse</Nav.Link>
+          </Nav>
+          <Nav className="ms-auto">
+            <Row>
+              <Col className='d-flex'>
+            <Form.Group>
+              <Form.Control
+                type="search"
+                placeholder="Cerca un libro"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </Form.Group>
+            <Button>prova</Button>
+            </Col>
+            </Row>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
 }
 
-export default MyNav;
+export default MyNav

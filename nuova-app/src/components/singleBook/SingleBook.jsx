@@ -26,9 +26,7 @@ function SingleBook(props) {
                     <Card.Text>
                         {props.asin}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                    
-                    <CommentArea />
+                    {selected && <CommentArea asin={props.asin} />}
                 </Card.Body>
             </Card>
         </Col>

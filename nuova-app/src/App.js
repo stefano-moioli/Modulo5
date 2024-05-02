@@ -11,10 +11,11 @@ function App() {
 
   const [books, setBooks] = useState(Fantasy) //nell'array nome stato
   const [booksInit, setBooksInit] = useState(Fantasy)
+  const [searchQuery, setSearchQuery] = useState('')
 
   return (
     <>
-    <MyNav />
+    <MyNav searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
     <WelcomeComponent />
     <SearchBarComponent allBooks={books} setBooks={setBooks} booksInit={booksInit}/>
     <AlltheBooks allBooks={books}/>
