@@ -84,7 +84,7 @@ const AddComment = ({ asin }) => {
             <option>5</option>
           </Form.Control>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" className='bg-dark' type="submit">
           Invia
         </Button>
       </Form>

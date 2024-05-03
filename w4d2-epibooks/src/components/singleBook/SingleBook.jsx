@@ -15,15 +15,15 @@ const SingleBook = ({ setSelected, selected, book }) => {
         style={{ border: selected === book.asin ? '2px solid red' : 'none' }}>
         <Card.Img className='cardImg' variant="top" src={book.img} />
         <Card.Body className='cardBody'>
-          <Card.Title style={{ color: 'black' }}>{book.title}</Card.Title>
+          <Card.Title>{book.title}</Card.Title>
           <Card.Text>{book.category}</Card.Text>
           <Card.Text>{book.price}</Card.Text>
           <Card.Text>{book.asin}</Card.Text>
           <Button
-            className="w-100 mt-2"
+            className="w-100 mt-2 bg-dark"
             onClick={() => navigate(`/details/${book.asin}`)}
           >
-            VAI AI DETTAGLI
+            See details
           </Button>
         </Card.Body>
       </Card>

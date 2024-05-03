@@ -1,0 +1,10 @@
+.bookDetailImg{
+    width: 400px;
+    height: 500px;
+}
+
+.bookDetailContainer{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

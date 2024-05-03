@@ -3,7 +3,7 @@ import styles from "./footer.css"
 
 function MyFooter(){
     return (
-        <Container Fluid className="bg-dark">
+        <Container fluid className="bg-dark mt-3">
         <Card body className="text-center bg-dark text-white">Copyright &copy;2024</Card>
         </Container>
     )

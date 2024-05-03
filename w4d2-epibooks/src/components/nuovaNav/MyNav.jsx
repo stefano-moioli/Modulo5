@@ -21,7 +21,7 @@ const MyNav = ({ searchQuery, setSearchQuery }) => {
             <Link to="/about">
               <div className='nav-link'>About</div>
             </Link>
-            <Link to="/">
+            <Link to="/browse">
               <div className='nav-link'>Browse</div>
             </Link>
           </Nav>
