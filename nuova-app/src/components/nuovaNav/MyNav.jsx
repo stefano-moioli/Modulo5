@@ -26,10 +26,10 @@ const MyNav = ({ searchQuery, setSearchQuery }) => {
                 type="search"
                 placeholder="Cerca un libro"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+               onChange={(e) => setSearchQuery(e.target.value)}
               />
             </Form.Group>
-            <Button>prova</Button>
+            <Button className='bg-dark'>Search</Button>
             </Col>
             </Row>
           </Nav>

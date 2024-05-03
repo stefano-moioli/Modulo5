@@ -1,0 +1,21 @@
+.cardContainer{
+    max-width: 415px;
+    height: auto;
+}
+
+.cardContainer img{
+    object-fit: contain;
+    max-height: 208px;
+    max-width: 300px;
+    
+}
+
+
+@media screen and (max-width: 769px) {
+    .cardContainer {
+        max-width: 250px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+  }
