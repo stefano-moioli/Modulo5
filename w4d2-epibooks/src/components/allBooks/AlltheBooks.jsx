@@ -9,7 +9,6 @@ import WelcomeComponent from '../welcome/WelcomeComponent'
 const AllTheBooks = ({ searchQuery }) => {
   const [selected, setSelected] = useState(false)
 
-
   return (
     <>
     <WelcomeComponent />

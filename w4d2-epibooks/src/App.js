@@ -9,15 +9,13 @@ import NotFound from "./components/errorPage/NotFound"
 
 function App() {
 
-  const [books, setBooks] = useState(Fantasy) //nell'array nome stato
-  {/* const [booksInit, setBooksInit] = useState(Fantasy)*/}
+
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
     <>
     <BrowserRouter>
     <MyNav searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
-    {/* <SearchBarComponent allBooks={books} setBooks={setBooks} booksInit={booksInit}/>*/}
     <Routes>
     <Route path='/' element={<AlltheBooks searchQuery={searchQuery}/>} />
     <Route path="/details/:asin" element={<BookDetails />} />
