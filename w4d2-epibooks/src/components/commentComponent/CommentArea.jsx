@@ -55,6 +55,7 @@ export default function CommentArea({asin}){
         {isLoading && <LoadingComponent />}
         {isError && <ErrorComponent />}
         <AddCommentComponent asin={asin}/>
+        <h5 className="mt-5">Reviews</h5>
         <CommentListComponent commentsToShow={comments}/>
         </Col>
         </Container>

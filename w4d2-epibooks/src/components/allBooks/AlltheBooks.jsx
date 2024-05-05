@@ -11,30 +11,30 @@ const AllTheBooks = ({ searchQuery }) => {
 
   return (
     <>
-    <WelcomeComponent />
-    <Container className='containerSingleCard'>
-      <Row>
-    <Col md={8}>
-    <Row className="g-2 mt-3">
-      {fantasy
-        .filter((b) => b.title.toLowerCase().includes(searchQuery))
-        .map((book) => {
-          return (
-            <Col xs={12} md={4} lg={3} key={book.asin}>
-              <SingleBook book={book} 
-              selected={selected}
-              setSelected={setSelected}
-              />
-            </Col>
-          )
-        })}
-    </Row>
-    </Col>
-    <Col md={4}>
-      <CommentArea asin={selected}/>
-    </Col>
-    </Row>
-    </Container>
+      <WelcomeComponent />
+      <Container className='containerSingleCard'>
+        <Row>
+          <Col xs= {6} md={8}>
+            <Row className="g-2 mt-3">
+              {fantasy
+                .filter((b) => b.title.toLowerCase().includes(searchQuery))
+                .map((book) => {
+                  return (
+                    <Col xs={12} md={4} lg={3} key={book.asin}>
+                      <SingleBook book={book}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                    </Col>
+                  )
+                })}
+            </Row>
+          </Col>
+          <Col xs={6} md={4}>
+            <CommentArea asin={selected} />
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }

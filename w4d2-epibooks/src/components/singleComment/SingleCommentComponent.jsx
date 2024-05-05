@@ -1,4 +1,5 @@
-import { Button, ListGroup } from 'react-bootstrap'
+import { Button, ListGroup } from 'react-bootstrap';
+import Styles from '../singleComment/singleComment.css'
 
 const SingleComment = ({ comment, rate }) => {
   const deleteComment = async (asin) => {
@@ -23,18 +24,17 @@ const SingleComment = ({ comment, rate }) => {
   }
 
   return (
-    <ListGroup.Item data-testid='single-comment'>
-      <div>
-     <p>Rating: {comment.rate}</p>
-     <p>{comment.comment}</p>
-        </div>
-      <Button
+    <ListGroup.Item data-testid='single-comment' className='reviewContainer'>
+      <div className='reviewSection'>
+        <p>Rating: {comment.rate}</p>
+        <p>{comment.comment}</p>
+        <Button
         variant="danger"
-        className="ms-2"
         onClick={() => deleteComment(comment._id)}
       >
         Delete
       </Button>
+      </div>
     </ListGroup.Item>
   )
 }

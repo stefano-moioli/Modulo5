@@ -55,7 +55,7 @@ const AddCommentComponent = ({ asin }) => {
           <Form.Label>Review</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Inserisci qui la recensione"
+            placeholder="Leave here your review"
             value={comment.comment}
             onChange={(e) =>
               setComment({
