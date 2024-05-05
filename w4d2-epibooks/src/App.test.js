@@ -58,3 +58,20 @@ test('renders comment area', ()=>{
       expect(firstBookCard).not.toHaveStyle('border: 2px solid red')
     })
   })
+
+  describe('Comment List testing', () => {
+     it('renders no book comments on page load', () => {
+      render(<App />)
+      const allBookComments = screen.queryAllByTestId('single-comment')
+      expect(allBookComments).toHaveLength(0)
+    })
+  
+    it('renders comments when selected a book', async () => {
+      render(<App />)
+      const allBookCards = screen.getAllByTestId('singleBookCard')
+      const firstBookCard = allBookCards[0]
+      fireEvent.click(firstBookCard)
+      const allBookComments = await screen.findAllByTestId('single-comment')
+      expect(allBookComments).not.toHaveLength(0)
+    })
+  })
