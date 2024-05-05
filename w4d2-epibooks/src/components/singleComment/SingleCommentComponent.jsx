@@ -1,6 +1,6 @@
 import { Button, ListGroup } from 'react-bootstrap'
 
-const SingleComment = ({ comment }) => {
+const SingleComment = ({ comment, rate }) => {
   const deleteComment = async (asin) => {
     try {
       let response = await fetch(
@@ -24,7 +24,10 @@ const SingleComment = ({ comment }) => {
 
   return (
     <ListGroup.Item data-testid='single-comment'>
-      {comment.comment}
+      <div>
+     <p>Rating: {comment.rate}</p>
+     <p>{comment.comment}</p>
+        </div>
       <Button
         variant="danger"
         className="ms-2"

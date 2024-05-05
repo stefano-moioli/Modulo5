@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
-const AddComment = ({ asin }) => {
+const AddCommentComponent = ({ asin }) => {
   const [comment, setComment] = useState({
     comment: '',
     rate: 1,
@@ -73,7 +73,7 @@ const AddComment = ({ asin }) => {
             onChange={(e) =>
               setComment({
                 ...comment,
-                rate: e.target.value,
+                rate: parseInt(e.target.value),
               })
             }
           >
@@ -92,4 +92,4 @@ const AddComment = ({ asin }) => {
   )
 }
 
-export default AddComment
+export default AddCommentComponent
