@@ -52,7 +52,7 @@ const AddComment = ({ asin }) => {
     <div className="my-3">
       <Form onSubmit={sendComment}>
         <Form.Group className="mb-2">
-          <Form.Label>Recensione</Form.Label>
+          <Form.Label>Review</Form.Label>
           <Form.Control
             type="text"
             placeholder="Inserisci qui la recensione"
@@ -66,7 +66,7 @@ const AddComment = ({ asin }) => {
           />
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Label>Valutazione</Form.Label>
+          <Form.Label>Rate</Form.Label>
           <Form.Control
             as="select"
             value={comment.rate}
@@ -85,7 +85,7 @@ const AddComment = ({ asin }) => {
           </Form.Control>
         </Form.Group>
         <Button variant="primary" className='bg-dark' type="submit">
-          Invia
+          Send
         </Button>
       </Form>
     </div>

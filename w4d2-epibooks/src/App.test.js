@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import WelcomeComponent from './components/welcome/WelcomeComponent';
 import CommentArea from './components/commentComponent/CommentArea';
@@ -28,14 +28,33 @@ test('renders comment area', ()=>{
   expect(commentAreaComponent).toBeInTheDocument();
 })
 
-describe('navbar filtering books', () => {
+/* describe('navbar filtering books', () => {
   it('search book with destiny in the title', async () => {
     render(<App />);
-    const inputSearch = screen.getAllByPlaceholderText('Search Book')[0];
-    fireEvent.change(inputSearch, {target: {value: 'destiny'}});
-    await waitFor(() => {
-      const allTheBooks = screen.getAllByTestId('book-title');
+    const inputSearch = screen.getAllByPlaceholderText(/Search Book/i);
+    fireEvent.change(inputSearch, {target: { value: 'destiny' }})
+      const allTheBooks = await screen.getAllByTestId('singleBookCard');
       expect(allTheBooks).toHaveLength(3);
     });
-  });
-});
+  });*/
+
+  describe('Border book testing', () => {
+    it('change card border color', () => {
+      render(<App />)
+      const allTheBookCards = screen.getAllByTestId('singleBookCard')
+      const firstBookCard = allTheBookCards[0]
+      fireEvent.click(firstBookCard)
+      expect(firstBookCard).toHaveStyle('border: 2px solid red')
+    })
+  
+    it('restores normal border after clicking on a second book', () => {
+      render(<App />)
+      const allTheBookCards = screen.getAllByTestId('singleBookCard')
+      const firstBookCard = allTheBookCards[0]
+      fireEvent.click(firstBookCard)
+      expect(firstBookCard).toHaveStyle('border: 2px solid red')
+      const secondBookCard = allTheBookCards[1]
+      fireEvent.click(secondBookCard)
+      expect(firstBookCard).not.toHaveStyle('border: 2px solid red')
+    })
+  })

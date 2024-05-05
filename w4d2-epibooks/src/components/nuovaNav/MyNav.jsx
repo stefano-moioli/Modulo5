@@ -11,7 +11,9 @@ const MyNav = ({ searchQuery, setSearchQuery }) => {
       data-bs-theme="dark"
     >
       <Container fluid>
-        <Navbar.Brand href="#">EpiBooks</Navbar.Brand>
+        <Link to={"/"}>
+          <div className='navbar-brand'>EpiBooks</div>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

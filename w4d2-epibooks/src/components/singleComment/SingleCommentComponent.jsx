@@ -13,7 +13,7 @@ const SingleComment = ({ comment }) => {
         }
       )
       if (response.ok) {
-        alert('La recensione è stata elimata!')
+        alert('La recensione è stata eliminata!')
       } else {
         throw new Error('La recensione non è stata eliminata!')
       }
@@ -30,7 +30,7 @@ const SingleComment = ({ comment }) => {
         className="ms-2"
         onClick={() => deleteComment(comment._id)}
       >
-        Elimina
+        Delete
       </Button>
     </ListGroup.Item>
   )
