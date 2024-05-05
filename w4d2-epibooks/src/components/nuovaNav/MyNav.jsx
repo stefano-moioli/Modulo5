@@ -31,12 +31,11 @@ const MyNav = ({ searchQuery, setSearchQuery }) => {
             <Form.Group>
               <Form.Control
                 type="search"
-                placeholder="Cerca un libro"
+                placeholder="Search Book"
                 value={searchQuery}
                onChange={(e) => setSearchQuery(e.target.value)}
               />
             </Form.Group>
-            <Button className='bg-dark'>Search</Button>
             </Col>
             </Row>
           </Nav>

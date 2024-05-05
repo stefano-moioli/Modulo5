@@ -12,7 +12,9 @@ const SingleBook = ({ setSelected, selected, book }) => {
     <>
       <Card className='cardContainer' 
         onClick={() => setSelected(book.asin)}
-        style={{ border: selected === book.asin ? '2px solid red' : 'none' }}>
+        style={{ border: selected === book.asin ? '2px solid red' : 'none' }}
+        data-testid="singleBookCard">
+          
         <Card.Img className='cardImg' variant="top" src={book.img} />
         <Card.Body className='cardBody'>
           <Card.Title>{book.title}</Card.Title>

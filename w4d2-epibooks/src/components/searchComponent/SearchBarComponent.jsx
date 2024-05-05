@@ -19,6 +19,7 @@ const filterBooks = () =>{
     const filterByTerm = props.allBooks.filter(book =>
         book.title.toLowerCase().includes(input.toLowerCase()))
         props.setBooks(filterByTerm)
+
     }
 
     return(
@@ -26,8 +27,10 @@ const filterBooks = () =>{
         <Row>
             <Col>
             <div className="d-flex justify-content-center mt-3">
-                <input type="text" onChange={handleChangeInput}/>
-                <button onClick={filterBooks}>Search</button>
+                <input type="text" onChange={handleChangeInput}
+                
+                data-testid="book-title"
+                />
             </div>
             </Col>
         </Row>
